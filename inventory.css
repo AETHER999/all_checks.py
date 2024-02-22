@@ -1,0 +1,70 @@
+/* Estilos para el encabezado */
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Estilos para los botones */
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el menú de opciones */
+#menu {
+  text-align: center;
+}
+
+/* Estilos para la tabla de inventario */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilos para el botón de agregar artículo */
+#add-item-button {
+  background-color: #28A745;
+}
+
+/* Estilos para el botón de eliminar artículo */
+#remove-item-button {
+  background-color: #DC3545;
+}
+
+/* Estilos para el botón de obtener ingresos totales */
+#get-revenue-button {
+  background-color: #FFC107;
+}
+
+/* Estilos para el botón de salir */
+#quit-button {
+  background-color: #6C757D;
+}
+
+/* Estilos para el área de mensajes */
+#message-area {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilos para el pie de página */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}

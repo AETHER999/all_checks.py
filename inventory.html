@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <!-- Agrega un enlace a tu archivo CSS aquí si lo tienes -->
+</head>
+<body>
+    <h1>Inventory Management</h1>
+
+    <!-- Contenedor para mostrar el resultado del código Python -->
+    <div id="result">
+        <!-- El resultado del código Python se mostrará aquí -->
+    </div>
+
+    <!-- Script de Python -->
+    <script>
+        // Define el código Python aquí
+        const inventory = {
+            'laptop': {'quantity': 10, 'price': 800},
+            'printer': {'quantity': 5, 'price': 200},
+            'keyboard': {'quantity': 20, 'price': 50},
+            'mouse': {'quantity': 15, 'price': 30},
+            'monitor': {'quantity': 8, 'price': 400}
+        };
+
+        function show_inventory() {
+            // Define la función para mostrar el inventario aquí
+            let result = '<h2>Current Inventory</h2><ul>';
+            for (const item in inventory) {
+                if (inventory.hasOwnProperty(item)) {
+                    const data = inventory[item];
+                    result += `<li>${item}: ${data.quantity} in stock, $${data.price} each</li>`;
+                }
+            }
+            result += '</ul>';
+            document.getElementById('result').innerHTML = result;
+        }
+
+        // Define las otras funciones de Python aquí
+        // ...
+
+        // Main loop que maneja la interacción del usuario
+        while (true) {
+            const choice = prompt('What would you like to do?\n1. Show inventory\n2. Add item to inventory\n3. Remove item from inventory\n4. Get total revenue\n5. Quit');
+
+            if (choice === '1') {
+                show_inventory();
+            } else if (choice === '2') {
+                // Llama a la función para agregar artículo
+                // ...
+            } else if (choice === '3') {
+                // Llama a la función para eliminar artículo
+                // ...
+            } else if (choice === '4') {
+                // Llama a la función para obtener ingresos totales
+                // ...
+            } else if (choice === '5') {
+                break; // Sale del bucle
+            } else {
+                alert('Invalid choice. Please enter a number from 1 to 5.');
+            }
+        }
+    </script>
+</body>
+</html>
