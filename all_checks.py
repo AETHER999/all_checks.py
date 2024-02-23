@@ -17,7 +17,7 @@ def check_disk_full(disk, min_gb, min_percent):
     gigabytes_free = du.free / 2**30
     if gigabytes_free < min_gb or percent_free < min_percent:
         return True
-    return False˝
+    return False
 
 def check_root_full():
     """Returns True if the root partition is full; False otherwise."""
