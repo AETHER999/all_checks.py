@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import time
-import winsound
+import pygame
 
 # Define a dictionary of note values and their corresponding duration in seconds
 note_values = {
@@ -20,9 +20,12 @@ click_sounds = {
     'cowbell': 'click3.wav',
 }
 
+# Initialize pygame mixer
+pygame.mixer.init()
+
 # Define a function to play a click sound with a given duration and frequency
 def play_click(duration, frequency):
-    winsound.Beep(int(frequency), int(duration * 1000))
+    pygame.mixer.Sound.play(click_sound)
 
 def metronome(tempo, subdivision, sound):
     # Convertir subdivision a un número entero
@@ -32,7 +35,7 @@ def metronome(tempo, subdivision, sound):
     subdivision_duration = beat_duration / subdivision
 
     # Load the selected click sound
-    click_sound = click_sounds[sound]
+    click_sound = pygame.mixer.Sound(click_sounds[sound])
 
     # Play the metronome
     while True:
