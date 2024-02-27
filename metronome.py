@@ -1,7 +1,6 @@
 #!/usr/binenv python3
 
 import time
-import winsound
 
 # Define a dictionary of note values and their corresponding duration in seconds
 note_values = {
