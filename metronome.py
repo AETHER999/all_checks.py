@@ -23,14 +23,12 @@ click_sounds = {
 def play_click(duration, frequency):
     winsound.Beep(int(frequency), int(duration * 1000))
 
-# Define a function to run the metronome
 def metronome(tempo, subdivision, sound):
-    # Calculate the duration of one beat in seconds
-    beat_duration = 60.0 / tempo
-
-    # Calculate the duration of each subdivision in seconds
-    subdivision_duration = beat_duration / float(subdivision)
-
+    # Convertir subdivision a un número entero
+    subdivision = int(subdivision)
+    # Resto del código permanece igual
+    for i in range(subdivision):
+    # Código para generar el sonido del metrónom
     # Load the selected click sound
     click_sound = click_sounds[sound]
 
@@ -72,14 +70,16 @@ def get_user_input():
 
     return tempo, subdivision, sound
 
-# Define a function to run the metronome based on user input
 def main():
-    print('Welcome to the metronome!')
-    while True:
-        tempo, subdivision, sound = get_user_input()
-        print(f'\nTempo: {tempo} BPM\nSubdivision: {subdivision}\nClick sound: {sound}\n')
-        metronome(tempo, note_values[subdivision], sound)
-        print('Metronome stopped.\n')
+    print("Welcome to the metronome!")
+    tempo = int(input("Enter the tempo (BPM): "))
+    subdivision = input("Enter the subdivision (1/1, 1/2, 1/4, 1/8, 1/16, 1/32): ")
+    sound = input("Choose a click sound (beep, woodblock, cowbell): ")
 
-if __name__ == '__main__':
+    print("\nTempo:", tempo, "BPM")
+    print("Subdivision:", subdivision)
+    print("Click sound:", sound, "\n")
+
+    metronome(tempo, subdivision, sound)
+    if __name__ == '__main__':
     main()
