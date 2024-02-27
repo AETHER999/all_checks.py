@@ -1,3 +1,5 @@
+#!/usr/binenv python3
+
 import time
 import winsound
 
