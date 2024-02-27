@@ -1,6 +1,7 @@
-#!/usr/binenv python3
+#!/usr/bin/env python3
 
 import time
+import winsound
 
 # Define a dictionary of note values and their corresponding duration in seconds
 note_values = {
@@ -26,9 +27,10 @@ def play_click(duration, frequency):
 def metronome(tempo, subdivision, sound):
     # Convertir subdivision a un número entero
     subdivision = int(subdivision)
-    # Resto del código permanece igual
-    for i in range(subdivision):
-    # Código para generar el sonido del metrónom
+    # Cálculo de duraciones de nota
+    beat_duration = 60 / tempo
+    subdivision_duration = beat_duration / subdivision
+
     # Load the selected click sound
     click_sound = click_sounds[sound]
 
@@ -72,14 +74,13 @@ def get_user_input():
 
 def main():
     print("Welcome to the metronome!")
-    tempo = int(input("Enter the tempo (BPM): "))
-    subdivision = input("Enter the subdivision (1/1, 1/2, 1/4, 1/8, 1/16, 1/32): ")
-    sound = input("Choose a click sound (beep, woodblock, cowbell): ")
+    tempo, subdivision, sound = get_user_input()
 
     print("\nTempo:", tempo, "BPM")
     print("Subdivision:", subdivision)
     print("Click sound:", sound, "\n")
 
-    metronome(tempo, subdivision, sound)
-    if __name__ == '__main__':
+    metronome(tempo, note_values[subdivision], sound)
+
+if __name__ == '__main__':
     main()
