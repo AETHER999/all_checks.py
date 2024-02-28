@@ -13,27 +13,21 @@ note_values = {
     '1/32': 0.125,
 }
 
-# Define a function to play a click sound with a given duration and frequency using VLC
 def play_click(duration, sound):
     subprocess.run(["cvlc", "--play-and-exit", sound])
 
 def metronome(tempo, subdivision, sound):
-    # Cálculo de duraciones de nota
     beat_duration = 60 / tempo
     subdivision_duration = beat_duration / subdivision
 
-    # Play the metronome
     while True:
-        for i in range(subdivision):
+        for i in range(int(subdivision)):
             if i == 0:
-                # Play the accented click on the first subdivision
                 play_click(beat_duration * 0.7, sound)
             else:
-                # Play the regular click on all other subdivisions
                 play_click(subdivision_duration * 0.7, sound)
             time.sleep(subdivision_duration - subdivision_duration * 0.7)
 
-# Define a function to get the tempo, subdivision, and sound from the user
 def get_user_input():
     while True:
         try:
@@ -60,7 +54,7 @@ def get_user_input():
         except FileNotFoundError:
             print('File not found. Try again.')
 
-    return tempo, subdivision, sound
+    return tempo, note_values[subdivision], sound
 
 def main():
     print("Welcome to the metronome!")
@@ -70,7 +64,7 @@ def main():
     print("Subdivision:", subdivision)
     print("Click sound:", sound, "\n")
 
-    metronome(tempo, note_values[subdivision], sound)
+    metronome(tempo, subdivision, sound)
 
 if __name__ == '__main__':
     main()
