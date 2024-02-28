@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import time
-import pygame
+import subprocess
 
 # Define a dictionary of note values and their corresponding duration in seconds
 note_values = {
@@ -13,39 +13,24 @@ note_values = {
     '1/32': 0.125,
 }
 
-# Define a dictionary of different click sounds
-click_sounds = {
-    'beep': 'click1.wav',
-    'woodblock': 'click2.wav',
-    'cowbell': 'click3.wav',
-}
-
-# Initialize pygame mixer
-pygame.mixer.init()
-
-# Define a function to play a click sound with a given duration and frequency
-def play_click(duration, frequency):
-    pygame.mixer.Sound.play(click_sound)
+# Define a function to play a click sound with a given duration and frequency using VLC
+def play_click(duration, sound):
+    subprocess.run(["cvlc", "--play-and-exit", sound])
 
 def metronome(tempo, subdivision, sound):
-    # Convertir subdivision a un número entero
-    subdivision = int(subdivision)
     # Cálculo de duraciones de nota
     beat_duration = 60 / tempo
     subdivision_duration = beat_duration / subdivision
-
-    # Load the selected click sound
-    click_sound = pygame.mixer.Sound(click_sounds[sound])
 
     # Play the metronome
     while True:
         for i in range(subdivision):
             if i == 0:
                 # Play the accented click on the first subdivision
-                play_click(beat_duration * 0.7, 1000)
+                play_click(beat_duration * 0.7, sound)
             else:
                 # Play the regular click on all other subdivisions
-                play_click(subdivision_duration * 0.7, 700)
+                play_click(subdivision_duration * 0.7, sound)
             time.sleep(subdivision_duration - subdivision_duration * 0.7)
 
 # Define a function to get the tempo, subdivision, and sound from the user
@@ -67,11 +52,13 @@ def get_user_input():
             print('Invalid input. Try again.')
 
     while True:
-        sound = input('Choose a click sound (beep, woodblock, cowbell): ')
-        if sound in click_sounds:
+        sound = input('Enter the path to the click sound file: ')
+        try:
+            with open(sound, 'rb') as f:
+                f.read(1)
             break
-        else:
-            print('Invalid input. Try again.')
+        except FileNotFoundError:
+            print('File not found. Try again.')
 
     return tempo, subdivision, sound
 
