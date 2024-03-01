@@ -1,3 +1,5 @@
+#!/usr/binenv python3
+
 # Define the initial inventory dictionary with sample data
 inventory = {
     'laptop': {'quantity': 10, 'price': 800},
@@ -5,8 +7,8 @@ inventory = {
     'keyboard': {'quantity': 20, 'price': 50},
     'mouse': {'quantity': 15, 'price': 30},
     'monitor': {'quantity': 8, 'price': 400},
-    'monitor': {'quantity': 25, 'price': 200}
-
+    'smartphone': {'quantity': 25, 'price': 200}  # Se cambió 'monitor' por 'smartphone'
+}
 
 # Function to display the current inventory
 def show_inventory():
