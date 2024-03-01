@@ -6,7 +6,7 @@ inventory = {
     'mouse': {'quantity': 15, 'price': 30},
     'monitor': {'quantity': 8, 'price': 400},
     'monitor': {'quantity': 25, 'price': 200}
-}
+
 
 # Function to display the current inventory
 def show_inventory():
