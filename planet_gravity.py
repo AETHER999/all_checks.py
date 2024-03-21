@@ -1,3 +1,5 @@
+#!/usr/binenv python3
+
 planet_gravity = {
     'Mercury': 0.38,
     'Venus': 0.91,
