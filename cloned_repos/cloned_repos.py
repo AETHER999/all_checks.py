@@ -3,7 +3,7 @@
 import os
 import git
 
-url = 'https://github.com/AETHER999/all_checks.py.git'
+url = 'https://github.com/AETHER999/all_checks.py'
 path = '/home/zebba/codigos/cloned_repos'
 
 from git.exc import GitCommandError
