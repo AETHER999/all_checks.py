@@ -1,7 +1,8 @@
-#!/usr/binenv python3
+#!/usr/bin/env python3
 
 import os
-from gitpython import Repo
+import git
+from git.exc import GitCommandError
 
 # Lista de repositorios
 repos = [
@@ -28,10 +29,10 @@ def clone_repositories():
         # Obtener el nombre del repositorio
         repo_name = repo_url.split("/")[-1].split(".git")[0]
 
- # Clonar el repositorio
+        # Clonar el repositorio
         repo_path = os.path.join(CLONE_FOLDER, repo_name)
         try:
-            Repo.clone_from(repo_url, repo_path)
+            git.repo.clone_from(repo_url, repo_path)
             print(f"Repositorio clonado: {repo_url}")
         except Exception as e:
             print(f"Error al clonar {repo_url}: {e}")
