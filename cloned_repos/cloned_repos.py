@@ -32,7 +32,7 @@ def clone_repositories():
         # Clonar el repositorio
         repo_path = os.path.join(CLONE_FOLDER, repo_name)
         try:
-            git.repo.clone_from(repo_url, repo_path)
+            git.Repo.clone_from(repo_url, repo_path)
             print(f"Repositorio clonado: {repo_url}")
         except Exception as e:
             print(f"Error al clonar {repo_url}: {e}")
