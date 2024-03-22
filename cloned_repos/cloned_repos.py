@@ -2,7 +2,12 @@
 
 import os
 import git
+
+url = 'https://github.com/AETHER999/all_checks.py.git'
+path = '/home/zebba/codigos/cloned_repos'
+
 from git.exc import GitCommandError
+
 
 # Lista de repositorios
 repos = [
