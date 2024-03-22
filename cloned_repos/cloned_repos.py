@@ -1,5 +1,7 @@
-
 # all_checks.py
+import os
+from git import Repo
+
 repos = [
     "https://github.com/AETHER999/auto-update.py.git",
     "https://github.com/AETHER999/date_time.py.git",
@@ -12,8 +14,6 @@ repos = [
 ]
 
 # script.py
-import os
-from git import Repo
 
 # Ruta al archivo repos.py
 REPOS_FILE = "all_checks.py"

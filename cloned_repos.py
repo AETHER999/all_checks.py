@@ -1,4 +1,5 @@
-# script.py
+#!/usr/binenv python3
+
 import os
 from git import Repo
 
