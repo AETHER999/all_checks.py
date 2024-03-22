@@ -1,7 +1,9 @@
-# all_checks.py
-import os
-from github import Repo
+#!/usr/binenv python3
 
+import os
+from git import Repo
+
+# Lista de repositorios
 repos = [
     "https://github.com/AETHER999/auto-update.py.git",
     "https://github.com/AETHER999/date_time.py.git",
@@ -13,11 +15,6 @@ repos = [
     "https://github.com/AETHER999/practicas.py.git"
 ]
 
-# script.py
-
-# Ruta al archivo repos.py
-REPOS_FILE = "all_checks.py"
-
 # Carpeta donde se guardarán los repositorios clonados
 CLONE_FOLDER = "cloned_repos"
 
@@ -25,9 +22,6 @@ def clone_repositories():
     # Crear la carpeta si no existe
     if not os.path.exists(CLONE_FOLDER):
         os.makedirs(CLONE_FOLDER)
-
-    # Importar la lista de repositorios
-    from repos import repos
 
     # Clonar cada repositorio
     for repo_url in repos:
