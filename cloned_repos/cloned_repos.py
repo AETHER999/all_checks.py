@@ -1,6 +1,6 @@
 # all_checks.py
 import os
-from git import Repo
+from github import Repo
 
 repos = [
     "https://github.com/AETHER999/auto-update.py.git",
