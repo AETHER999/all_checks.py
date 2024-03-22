@@ -1,7 +1,7 @@
 #!/usr/binenv python3
 
 import os
-from git import Repo
+from gitpython import Repo
 
 # Lista de repositorios
 repos = [
@@ -28,11 +28,13 @@ def clone_repositories():
         # Obtener el nombre del repositorio
         repo_name = repo_url.split("/")[-1].split(".git")[0]
 
-        # Clonar el repositorio
+ # Clonar el repositorio
         repo_path = os.path.join(CLONE_FOLDER, repo_name)
-        Repo.clone_from(repo_url, repo_path)
-
-        print(f"Repositorio clonado: {repo_url}")
+        try:
+            Repo.clone_from(repo_url, repo_path)
+            print(f"Repositorio clonado: {repo_url}")
+        except Exception as e:
+            print(f"Error al clonar {repo_url}: {e}")
 
 if __name__ == "__main__":
     clone_repositories()
