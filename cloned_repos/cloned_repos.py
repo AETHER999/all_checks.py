@@ -12,13 +12,7 @@ from git.exc import GitCommandError
 # Lista de repositorios
 repos = [
 
-    "https://github.com/AETHER999/all_checks.py/blob/master/date_time.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/free_memory.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/google_guide_line.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/inventory.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/metronome.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/planet_gravity.py",
-    "https://github.com/AETHER999/all_checks.py/blob/master/practicas.py"
+    "https://github.com/AETHER999/all_checks.py.git"
 ]
 
 # Carpeta donde se guardarán los repositorios clonados
