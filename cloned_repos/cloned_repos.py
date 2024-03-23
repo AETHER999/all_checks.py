@@ -3,16 +3,22 @@
 import os
 import git
 
-url = 'https://github.com/AETHER999/all_checks.py.git'
+url = 'https://github.com/AETHER999/all_checks.py'
 path = '/home/zebba/codigos/cloned_repos'
 
 from git.exc import GitCommandError
 
 
-# Lista de URL's de repositorios
+# Lista de repositorios
 repos = [
 
-    "https://github.com/AETHER999/all_checks.py.git"
+    "https://github.com/AETHER999/all_checks.py/blob/master/date_time.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/free_memory.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/google_guide_line.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/inventory.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/metronome.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/planet_gravity.py",
+    "https://github.com/AETHER999/all_checks.py/blob/master/practicas.py"
 ]
 
 # Carpeta donde se guardarán los repositorios clonados
