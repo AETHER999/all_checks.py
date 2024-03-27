@@ -1,1 +1,4 @@
-All these files will be used for practical purposes only
+# health-check
+Scripts that check the health of my computers
+
+This repo will be populated with lots of fancy checks.
